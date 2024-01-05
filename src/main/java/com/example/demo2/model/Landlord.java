@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -25,4 +27,6 @@ public class Landlord implements Serializable {
     private String address;
     private String workHours;
     private String offDays;
+    private LocalDate createDate;
+    private Date editDate;
 }

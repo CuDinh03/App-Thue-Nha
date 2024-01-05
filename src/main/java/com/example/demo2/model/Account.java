@@ -8,6 +8,7 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -22,10 +23,12 @@ public class Account implements Serializable {
     private UUID id;
     private String email;
     private String password;
-    private String name;
+    private String name; //username
     private String phoneNumber;
     private LocalDate createDate;
+    private Date editDate;
     private String address;
-    private boolean verified;
+    private Boolean verified;
+    private Boolean type;
 
 }

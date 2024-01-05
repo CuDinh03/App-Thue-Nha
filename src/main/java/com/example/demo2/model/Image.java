@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -21,4 +23,6 @@ public class Image implements Serializable {
 
     @ManyToOne
     private House house;
+    private LocalDate createDate;
+    private Date editDate;
 }

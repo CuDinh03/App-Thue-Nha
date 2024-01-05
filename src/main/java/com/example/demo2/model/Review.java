@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -19,7 +21,7 @@ public class Review implements Serializable {
     private UUID id;
 
     private String content;
-    private int rating;
+    private Integer rating;
 
     @ManyToOne
     private Landlord reviewedLandlord;
@@ -28,4 +30,7 @@ public class Review implements Serializable {
     private Renter reviewingRenter;
 
     private boolean approved;
+
+    private LocalDate createDate;
+    private Date editDate;
 }

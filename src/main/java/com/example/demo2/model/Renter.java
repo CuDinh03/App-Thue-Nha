@@ -8,6 +8,7 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -25,4 +26,6 @@ public class Renter implements Serializable {
     private String phoneNumber;
     private String address;
     private LocalDate birthDate;
+    private LocalDate createDate;
+    private Date editDate;
 }

@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -22,5 +24,7 @@ public class Province implements Serializable {
     private UUID id;
 
     private String name;
+    private LocalDate createDate;
+    private Date editDate;
 
 }

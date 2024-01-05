@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -24,5 +26,7 @@ public class Notification implements Serializable {
     private Account receiver;
 
     private LocalDateTime dateTime;
+    private LocalDate createDate;
+    private Date editDate;
 
 }

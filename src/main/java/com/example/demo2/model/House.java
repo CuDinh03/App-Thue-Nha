@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,8 +34,7 @@ public class House implements Serializable {
     private String rentStatus;
 
     @OneToMany(mappedBy = "house")
-    private List<Image> image; // Ideally, this should be handled as a separate entity for better management
-
+    private List<Image> image;
     @ManyToOne
     private HouseType houseType;
 
@@ -56,5 +56,5 @@ public class House implements Serializable {
     @ManyToOne
     private Landlord landlord;
 
-    // Getters and setters, constructors
-}
+    private LocalDate createDate;
+    private Date editDate;}

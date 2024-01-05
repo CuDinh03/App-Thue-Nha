@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -24,12 +25,14 @@ public class Payment implements Serializable {
     @ManyToOne
     private House house;
 
-    private double amount;
+    private Double amount;
 
     private LocalDate transactionDate;
 
     private String contractNumber;
 
-    private String status;
+    private Boolean status;
+    private LocalDate createDate;
+    private Date editDate;
 
 }
