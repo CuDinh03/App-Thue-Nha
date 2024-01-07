@@ -4,11 +4,16 @@ import com.example.demo2.model.*;
 import com.example.demo2.model.District;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
-
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class HouseDto {
     private UUID id;
     private String name;
