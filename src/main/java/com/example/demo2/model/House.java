@@ -2,7 +2,6 @@ package com.example.demo2.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
@@ -22,15 +21,15 @@ public class House implements Serializable {
     private String name;
     private String address;
     private String description;
-    private int numberOfRooms;
-    private double roomArea;
+    private Integer numberOfRooms;
+    private Double roomArea;
     private LocalDate createdDate;
     private LocalDate startDate;
     private LocalDate endDate;
     private String contractNumber;
-    private double depositAmount;
-    private double monthlyRentAmount;
-    private double serviceCharge;
+    private Double depositAmount;
+    private Double monthlyRentAmount;
+    private Double serviceCharge;
     private String rentStatus;
 
     @OneToMany(mappedBy = "house")
