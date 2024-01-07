@@ -18,11 +18,9 @@ public class AccountDto {
     private String name;
     private String phoneNumber;
     private LocalDate createDate;
-
     private Date editDate;
     private String address;
     private boolean verified;
-
     private Boolean type;
 
 }
