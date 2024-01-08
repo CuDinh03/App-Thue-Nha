@@ -1510,6 +1510,39 @@ Single Page Style
   display: inline-block;
   margin-top: 40px;
 }
+.single-property .main-image span.status.ss {
+  background-color: #20c997;
+  font-weight: 500;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fcfcfd;
+  padding: 5px 12px;
+  display: inline-block;
+  margin-top: 10px;
+}
+.single-property .main-image span.status.nss {
+  background-color: #b02a37;
+  font-weight: 500;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fcfcfd;
+  padding: 5px 12px;
+  display: inline-block;
+  margin-top: 10px;
+  float: right;
+}
+
+.single-property .main-image span.status.now {
+  background-color: #ffda6a;
+  font-weight: 500;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #000000;
+  padding: 5px 12px;
+  display: inline-block;
+  margin-top: 10px;
+  float: right;
+}
 
 .single-property .accordion {
   margin-top: 60px;

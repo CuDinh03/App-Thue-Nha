@@ -5,8 +5,8 @@ import com.example.demo2.model.Account;
 
 public class TransferData {
 
-    public Account returnEntity (AccountDto input){
-        Account result = new Account();
-        if ()
-    }
+//    public Account returnEntity (AccountDto input){
+//        Account result = new Account();
+//        if ()
+//    }
 }
