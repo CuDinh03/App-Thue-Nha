@@ -36,8 +36,8 @@ public class AdminController {
     @PostMapping("/create")
     public String save(@ModelAttribute("house") HouseDto houseDto, ModelMap modelMap){
 
-        HouseDto house = new HouseDto();
-        modelMap.addAttribute("house", house);
+        HouseDto house = houseDto;
+
         return "admin/index";
     }
 
