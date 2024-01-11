@@ -54,7 +54,8 @@
                     </li>
                     <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                    <li><a href="https://www.instagram.com/secsip.c/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.instagram.com/secsip.c/" target="_blank"><i
+                            class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -74,7 +75,7 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a th:href="@{/home}" >Trang chủ</a></li>
+                        <li><a th:href="@{/home}">Trang chủ</a></li>
                         <li><a th:href="@{/product/list}" class="active">Nhà cho thuê</a></li>
                         <!--                      <li><a th:href="@{/product/detail}">Chi tiết căn nhà</a></li>-->
                         <li><a href="contact.html">Liên hệ chúng tôi</a></li>
@@ -95,7 +96,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <span class="breadcrumb"><a th:href="@{/home}" >Trang chủ</a> / Nhà cho thuê</span>
+                <span class="breadcrumb"><a th:href="@{/home}">Trang chủ</a> / Nhà cho thuê</span>
                 <h3>Danh sách nhà cho thuê</h3>
             </div>
         </div>
@@ -118,45 +119,36 @@
                 <a href="#!" data-filter=".rac">Penthouse</a>
             </li>
         </ul>
-<!--        Danh sách căn hộ-->
-<!--        0. adv: Căn hộ chung cư -->
-<!--        1. str: Biệt thự -->
-<!--        2. rac: Penthouse -->
+        <!--        Danh sách căn hộ-->
+        <!--        0. adv: Căn hộ chung cư -->
+        <!--        1. str: Biệt thự -->
+        <!--        2. rac: Penthouse -->
         <div class="row properties-box">
-<!--            <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 th:class="${căn_hộ_loại == 'adv' ? 'adv' : (căn_hộ_loại == 'str' ? 'str' : 'rac')}"">-->
-<!--                <div class="item">-->
-<!--                    <a th:href="@{/product/detail}"><img th:src="@{/assets/images/property-01.jpg}" alt=""></a>-->
-<!--                    &lt;!&ndash;                    Loại nhà &ndash;&gt;-->
-<!--                    <span class="category">Luxury Villa</span>-->
-<!--                    <h6>$2.264.000</h6>-->
-<!--                    &lt;!&ndash;                    Địa chỉ&ndash;&gt;-->
-<!--                    <h4><a th:href="@{/product/detail}">18 Old Street Miami, OR 97219</a></h4>-->
-<!--                    &lt;!&ndash;                    Thông tin phòng &ndash;&gt;-->
-<!--                    <ul>-->
-<!--                        <li>Bedrooms: <span>8</span></li>-->
-<!--                        <li>Bathrooms: <span>8</span></li>-->
-<!--                        <li>Area: <span>545m2</span></li>-->
-<!--              bạn          <li>Floor: <span>3</span></li>-->
-<!--                        <li>Parking: <span>6 spots</span></li>-->
-<!--                    </ul>-->
-<!--                    <div class="main-button">-->
-<!--                        <a th:href="@{/product/detail}">Schedule a visit</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-            <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+            <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv"
+                 th:each="house, itemStat : ${listHouse}">
                 <div class="item">
-                    <a th:href="@{/product/detail}"><img th:src="@{/assets/images/property-01.jpg}" alt=""></a>
-<!--                    Loại nhà -->
-                    <span class="category">Luxury Villa</span>
-                    <h6>$2.264.000</h6>
-<!--                    Địa chỉ-->
-                    <h4><a th:href="@{/product/detail}">18 Old Street Miami, OR 97219</a></h4>
-<!--                    Thông tin phòng -->
+                    <!--                    <a th:href="@{/product/detail}"><img th:src="@{/assets/images/property-01.jpg}" alt=""></a>-->
+                    <!--                    Loại nhà -->
+                    <div class="owl-carousel owl-banner">
+
+                        <div th:each="image : ${listImage}">
+                            <div th:if="${image.house.id} == ${house.id}">
+                                <img th:src="${image.imagePath}" alt="Image"/>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <span class="category" th:text="${house.name}"></span>
+                    <h6 th:text="${house.depositAmount}"></h6>
+                    <!--                    Địa chỉ-->
+                    <h4><a th:href="@{/product/detail}" th:text="${house.address}"></a></h4>
+                    <!--                    Thông tin phòng -->
                     <ul>
-                        <li>Bedrooms: <span>8</span></li>
+                        <li>Bedrooms: <span th:text="${house.numberOfRooms}"></span></li>
                         <li>Bathrooms: <span>8</span></li>
-                        <li>Area: <span>545m2</span></li>
+                        <li>Area: <span th:text="${house.roomArea}"></span></li>
                         <li>Floor: <span>3</span></li>
                         <li>Parking: <span>6 spots</span></li>
                     </ul>
@@ -167,7 +159,7 @@
             </div>
             <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 str">
                 <div class="item">
-                        <a th:href="@{/product/detail}"><img th:src="@{/assets/images/property-02.jpg}" alt=""></a>
+                    <a th:href="@{/product/detail}"><img th:src="@{/assets/images/property-02.jpg}" alt=""></a>
                     <span class="category">Luxury Villa</span>
                     <h6>$1.180.000</h6>
                     <h4><a th:href="@{/product/detail}">54 New Street Florida, OR 27001</a></h4>
@@ -225,6 +217,20 @@
         </div>
     </div>
 </footer>
+<!--<script>-->
+<!--    $(document).ready(function(){-->
+<!--        $('.slider').slick({-->
+<!--            dots: true,-->
+<!--            infinite: true,-->
+<!--            speed: 500,-->
+<!--            slidesToShow: 1,-->
+<!--            slidesToScroll: 1,-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
+
 
 <!-- Scripts -->
 <!-- Bootstrap core JavaScript -->
