@@ -1,7 +1,13 @@
 package com.example.demo2.dto;
 
-import java.util.UUID;
+import lombok.*;
 
+import java.util.UUID;
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class StreetDto {
     private UUID id;
 

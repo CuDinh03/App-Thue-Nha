@@ -2,11 +2,9 @@ package com.example.demo2.dto;
 
 import com.example.demo2.model.*;
 import com.example.demo2.model.District;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.*;
-
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 @Data
@@ -37,5 +35,8 @@ public class HouseDto {
     private Ward ward;
     private Street street;
     private Landlord landlord;
+
+    private LocalDate createDate;
+    private Date editDate;
 
 }
