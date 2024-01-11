@@ -17,31 +17,23 @@ public class HouseDto {
     private String name;
     private String address;
     private String description;
-    private Integer numberOfRooms;
-    private Double roomArea;
+    private Integer numberOfRooms; //bedroom
+    private Double roomArea; //area
     private LocalDate createdDate;
     private LocalDate startDate;
     private LocalDate endDate;
     private String contractNumber;
-    private Double depositAmount;
+    private Double depositAmount; // tien coc, price
     private Double monthlyRentAmount;
     private Double serviceCharge;
     private String rentStatus;
-
     private List<Image> image;
-
     private HouseType houseType;
-
     private Province province;
-
     private City city;
-
     private District district;
-
     private Ward ward;
-
     private Street street;
-
     private Landlord landlord;
 
     private LocalDate createDate;

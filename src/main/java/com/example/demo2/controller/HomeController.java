@@ -15,4 +15,7 @@ public class HomeController {
 //        model.addAttribute("msg","homePage");
         return "view/index";
     }
+
+
+
 }
