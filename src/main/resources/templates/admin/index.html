@@ -73,6 +73,7 @@
                         <th scope="col">Address</th>
                         <th scope="col">Bedrooms</th>
                         <th scope="col">Area</th>
+                        <th scope="col">Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -83,7 +84,9 @@
                         <td th:text="${house.address}"></td>
                         <td th:text="${house.numberOfRooms}"></td>
                         <td th:text="${house.roomArea}"></td>
-
+                        <td >
+                            <a type="button"  class="btn btn-danger" th:href="@{'/admin/delete/' + ${house.id}}">Delete</a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

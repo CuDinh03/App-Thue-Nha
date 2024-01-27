@@ -56,4 +56,7 @@ public class House implements Serializable {
     private Landlord landlord;
 
     private LocalDate createDate;
-    private Date editDate;}
+    private Date editDate;
+
+    private Boolean status;
+}
